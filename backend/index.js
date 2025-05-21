@@ -47,12 +47,13 @@ const createAdminUser = async () => {
     console.error("❌ Erreur lors de l'ajout de l'admin :", error);
   }
 };
-const PORT = 8080
-connectMongoDB().then(() =>{
+const PORT = process.env.PORT || 8080;
+
+connectMongoDB().then(() => {
   createAdminUser();
   app.listen(PORT, () => {
-    console.log('Server is running....')
-  })
-})
+    console.log(`✅ Server is running on port ${PORT}`);
+  });
+});
 
 
