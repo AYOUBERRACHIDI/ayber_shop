@@ -16,7 +16,7 @@ app.use(cors({
 }))
 
 const userModel = require("./model/userModel");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
